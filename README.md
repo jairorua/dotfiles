@@ -68,6 +68,6 @@ dotfilesconfig checkout
 The final step is to let the respective plugin managers install all the necessary plugins.
 
 - **For Tmux (TPM):** Start `tmux` and press `prefix + I` (capital 'i') to fetch all the plugins.
-- **For Neovim (Packer/vim-plug):** Open `nvim` and run your plugin manager's install command (e.g., `:PackerSync` or `:PlugInstall`).
+- **For Neovim (Lazy):** The first time you open `nvim`, Lazy.nvim should automatically start installing all the plugins. If it doesn't, or to sync plugins later, run the command `:Lazy sync`.
 
 You are now all set!
