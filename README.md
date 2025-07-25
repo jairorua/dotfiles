@@ -35,7 +35,7 @@ git clone --bare git@github.com:your-username/dotfiles.git $HOME/.dotfiles
 Create a temporary alias to interact with the bare repository. This alias tells Git where to find its database (`--git-dir`) and which files to track (`--work-tree`).
 
 ```bash
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfilesconfig='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 ```
 
 ### 4. Checkout the Files
@@ -43,24 +43,24 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 "Checkout" the repository content. This command pulls the actual configuration files from the `.dotfiles` database and places them in their correct locations throughout your home directory.
 
 ```bash
-config checkout
+dotfilesconfig checkout
 ```
 
 **Note:** If you get an error about your files being overwritten, it means you already have default versions of those files (e.g., a default `.bashrc`). You can back them up first (`mv ~/.bashrc ~/.bashrc.bak`) and then run the `config checkout` command again.
 
 ### 5. Finalize the Setup
 
-1.  **Make the alias permanent** so you can use the `config` command in any new terminal session. Add it to your shell's startup script (`.bashrc` for Bash, `.zshrc` for Zsh).
+1.  **Make the alias permanent** so you can use the `dotfilesconfig` command in any new terminal session. Add it to your shell's startup script (`.bashrc` for Bash, `.zshrc` for Zsh).
 
     ```bash
-    echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> ~/.bashrc
+    echo "alias dotfilesconfig='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> ~/.bashrc
     ```
 
     Then, reload your shell with `source ~/.bashrc`.
 
 2.  **Set the repository to hide untracked files** for cleaner status reports.
     ```bash
-    config config --local status.showUntrackedFiles no
+    dotfilesconfig config --local status.showUntrackedFiles no
     ```
 
 ### 6. Install Plugins
