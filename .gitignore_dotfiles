@@ -1,0 +1,36 @@
+# ===================================================================
+# General
+# ===================================================================
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore local editor files
+*.swp
+*.swo
+
+# ===================================================================
+# Tmux - using TPM (Tmux Plugin Manager)
+# ===================================================================
+# TPM downloads plugins into this directory. We only want to track
+# the list of plugins in tmux.conf, not the plugins themselves.
+.config/tmux/plugins/
+
+# Ignore tmux session resurrection files
+.config/tmux/resurrect/
+
+# ===================================================================
+# Neovim - using lazy.nvim
+# ===================================================================
+# lazy.nvim installs plugins to this directory by default.
+# The lazy-lock.json file is what ensures reproducibility.
+# We MUST track lazy-lock.json, but NOT the plugins here.
+/.local/share/nvim/lazy/
+/.local/state/nvim/lazy/
+
+# Ignore compiled lua files
+*.luac
+
+# Ignore neovim session files and other local data
+/.local/state/nvim/
+/.local/share/nvim/shada/
