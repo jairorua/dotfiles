@@ -10,6 +10,7 @@ This setup uses the "bare repository" method to manage configurations. This mean
 
 - **Neovim (`~/.config/nvim`):** My personal configuration for the Neovim editor.
 - **Tmux (`~/.config/tmux`):** Configuration for the Tmux terminal multiplexer, including plugins managed by TPM.
+- **Ghoshtty (`~/.config/ghostty`):** Configuration for Ghostty termnial.
 - **And more...** (You can add more as you track them)
 
 ---
