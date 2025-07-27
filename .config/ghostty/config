@@ -1,0 +1,6 @@
+theme = Chalk
+font-size = 10
+font-family = "FiraCode Nerd Font"  
+font-feature = -calt, -liga, -dlig
+maximize = true
+window-padding-color = background
