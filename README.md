@@ -1,6 +1,6 @@
 # My Personal Dotfiles
 
-This repository contains my personal configuration files (dotfiles) for various command-line tools, including `tmux` and `neovim`.
+This repository contains my personal configuration files (dotfiles) for various command-line tools, including `tmux`, `ghostty` and `neovim`.
 
 This setup uses the "bare repository" method to manage configurations. This means the files are tracked directly in their original locations in the home directory, eliminating the need for symbolic links.
 
