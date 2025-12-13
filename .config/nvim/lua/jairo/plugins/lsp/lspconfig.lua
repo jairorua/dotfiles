@@ -4,13 +4,12 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
-		{ "folke/neodev.nvim", opts = {} },
+		{ "folke/lazydev.nvim", ft = "lua" },
 	},
 	config = function()
 		local lspconfig = require("lspconfig")
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 		local mason_lspconfig = require("mason-lspconfig")
-
 		local keymap = vim.keymap -- for conciseness
 
 		-- Ensure templ filetype is recognized early
@@ -115,11 +114,30 @@ return {
 				end,
 
 				["pyright"] = function()
+					-- Function to find the virtual environment
+					local function get_python_path(workspace)
+						-- Check for a ".venv" directory
+						local venv_path = workspace .. "/.venv/bin/python"
+						if vim.fn.filereadable(venv_path) == 1 then
+							return venv_path
+						end
+
+						-- Check for a "venv" directory
+						local venv_path_alt = workspace .. "/venv/bin/python"
+						if vim.fn.filereadable(venv_path_alt) == 1 then
+							return venv_path_alt
+						end
+
+						-- Fallback to the global python3 executable
+						return vim.fn.exepath("python3") or vim.fn.exepath("python") or "python"
+					end
+
 					lspconfig["pyright"].setup({
 						capabilities = capabilities,
 						filetypes = { "python" },
 						settings = {
 							python = {
+								pythonPath = get_python_path(vim.fn.getcwd()),
 								analysis = {
 									typeCheckingMode = "basic", -- Adjust this to "strict" for stricter checks
 									autoImportCompletions = true,

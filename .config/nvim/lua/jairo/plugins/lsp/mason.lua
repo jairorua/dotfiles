@@ -31,14 +31,12 @@ return {
 				"templ",
 				"html",
 				"cssls",
-				"ts_ls",
+				"vtsls",
 				"julials",
 				"clangd",
 				"tailwindcss",
 				"lua_ls",
 				"graphql",
-				"emmet_ls",
-				"prismals",
 			},
 			-- Auto-install configured servers (with mason)
 			automatic_installation = true,
@@ -49,9 +47,7 @@ return {
 			ensure_installed = {
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
-				"isort", -- python formatter
-				"black", -- python formatter
-				"pylint",
+				"ruff", -- python formatter
 				"eslint_d",
 				"gofumpt", -- go formatter
 				"templ",

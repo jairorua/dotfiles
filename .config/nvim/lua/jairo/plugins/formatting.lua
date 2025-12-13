@@ -9,7 +9,7 @@ return {
 				templ = { "templ" },
 				go = { "gofumpt" },
 				lua = { "stylua" },
-				python = { "isort", "black" },
+				python = { "ruff_format", "ruff_fix" },
 				css = { "prettier" },
 				html = { "prettier" },
 				javascript = { "prettier" },

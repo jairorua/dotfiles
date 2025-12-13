@@ -16,8 +16,8 @@ vim.opt.wrap = false
 -- Back-ups and undo
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
+vim.opt.undodir = vim.fn.stdpath("state") .. "/undo"
 
 -- Search setting
 vim.opt.ignorecase = true -- ignore case when searching
