@@ -26,17 +26,14 @@ return {
 		mason_lspconfig.setup({
 			-- list of servers for mason to install
 			ensure_installed = {
+				"html",
+				"cssls",
+				"tailwindcss",
+				"vtsls",
 				"pyright",
 				"gopls",
 				"templ",
-				"html",
-				"cssls",
-				"vtsls",
-				"julials",
-				"clangd",
-				"tailwindcss",
 				"lua_ls",
-				"graphql",
 			},
 			-- Auto-install configured servers (with mason)
 			automatic_installation = true,

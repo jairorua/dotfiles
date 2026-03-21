@@ -204,8 +204,10 @@ return {
 					})
 				end,
 
-				["ts_ls"] = function()
-					lspconfig.ts_ls.setup({
+				-- Javascript & Typescript
+				["vtsls"] = function()
+					-- Optional: Default settings for vtsls
+					lspconfig.vtsls.setup({
 						capabilities = capabilities,
 						filetypes = {
 							"javascript",
@@ -215,7 +217,32 @@ return {
 							"typescriptreact",
 							"typescript.tsx",
 						},
-						-- Add any tsserver specific settings here
+						settings = {
+							complete_function_calls = true,
+							vtsls = {
+								enableMoveToFileCodeAction = true,
+								autoUseWorkspaceTsdk = true,
+								experimental = {
+									completion = {
+										enableServerSideFuzzyMatch = true,
+									},
+								},
+							},
+							typescript = {
+								updateImportsOnFileMove = { enabled = "always" },
+								suggest = {
+									completeFunctionCalls = true,
+								},
+								inlayHints = {
+									parameterNames = { enabled = "literals" },
+									parameterTypes = { enabled = true },
+									variableTypes = { enabled = false },
+									propertyDeclarationTypes = { enabled = true },
+									functionLikeReturnTypes = { enabled = true },
+									enumMemberValues = { enabled = true },
+								},
+							},
+						},
 					})
 				end,
 			},
