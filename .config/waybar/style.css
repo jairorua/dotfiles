@@ -1,0 +1,13 @@
+* {
+  font-family: "Fira Code", monospace;
+  font-size: 12px;
+}
+
+#waybar {
+  background-color: rgba(20, 20, 20, 0.8);
+  color: #ffffff;
+}
+
+#clock {
+  color: #00ff99;
+}
