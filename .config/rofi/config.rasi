@@ -1,0 +1,28 @@
+configuration {
+    modi: "drun,run,window";
+    show-icons: true;
+    icon-theme: "Papirus";
+    font: "FiraCode Nerd Font 12";
+    drun-display-format: "{icon} {name}";
+    display-drun: "   Apps ";
+    display-run: "   Run ";
+    display-window: " 﩯  Window ";
+    
+    timeout {
+        action: "kb-cancel";
+        delay:  0;
+    }
+    filebrowser {
+        directories-first: true;
+        sorting-method:    "name";
+    }
+}
+
+/* Basic styling */
+window {
+    width: 30%;
+    border: 2px;
+    border-color: #33ccff;
+    border-radius: 10px;
+    padding: 20;
+}

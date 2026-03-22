@@ -1,13 +1,35 @@
 * {
-  font-family: "Fira Code", monospace;
-  font-size: 12px;
+  font-family: "FiraCode Nerd Font";
+  font-size: 13px;
 }
 
-#waybar {
-  background-color: rgba(20, 20, 20, 0.8);
+window#waybar {
+  background-color: rgba(26, 26, 26, 0.9);
+  color: #ffffff;
+  border-bottom: 2px solid rgba(51, 204, 255, 0.8);
+}
+
+button {
+  border: none;
+  border-radius: 0;
+}
+
+#workspaces button {
+  padding: 0 10px;
   color: #ffffff;
 }
 
-#clock {
-  color: #00ff99;
+#workspaces button.active {
+  background-color: rgba(51, 204, 255, 0.4);
+  border-bottom: 2px solid #33ccff;
+}
+
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#tray,
+#custom-notification {
+  padding: 0 10px;
+  margin: 0 4px;
 }
