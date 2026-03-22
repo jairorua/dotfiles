@@ -51,7 +51,7 @@ dotfilesconfig() {
 }
 
 # --- Plugins (Optional) ---
-# If you want syntax highlighting, you'll need to install it:
+# For syntax highlighting, install:
 # sudo pacman -S zsh-syntax-highlighting
 if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -67,3 +67,11 @@ eval "$(zoxide init zsh)"
 # Golang Path
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
+
+# --- TMUX ---
+# Fix tmux Wayland environment variables on attach
+if [ -n "$TMUX" ]; then
+    # Grab the active Hyprland instance and Wayland display from the system
+    export HYPRLAND_INSTANCE_SIGNATURE=$(ls -1 $XDG_RUNTIME_DIR/hypr | head -n 1)
+    export WAYLAND_DISPLAY=$(ls -1 $XDG_RUNTIME_DIR | grep -Eo 'wayland-[0-9]+' | head -n 1)
+fi

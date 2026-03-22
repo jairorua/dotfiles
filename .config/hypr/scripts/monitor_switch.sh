@@ -3,6 +3,15 @@
 # Define monitor names
 LAPTOP="eDP-1"
 EXTERNAL="HDMI-A-1"
+WALL="/home/jrp/arch-hyprland-setup/wallpaper2.jpg"
+
+function apply_wallpaper {
+    # Ensure hyprpaper is actually running before sending commands
+    if pgrep -x "hyprpaper" > /dev/null; then
+        # Use the wallpaper on ALL active monitors (empty string before comma)
+        hyprctl hyprpaper wallpaper ",$WALL"
+    fi
+}
 
 function handle_monitors {
     # Check if the external monitor is connected
@@ -14,6 +23,10 @@ function handle_monitors {
         # External is disconnected: enable laptop
         hyprctl keyword monitor "$LAPTOP, preferred, auto, 1"
     fi
+
+    # CRITICAL: reapply wallpaper after monitor change
+    sleep 0.5
+    apply_wallpaper
     
     # Optional: If you notice your Waybar disappears after switching monitors,
     # uncomment the next two lines to restart it automatically.
