@@ -1,2 +1,2 @@
-require("jairo.core")
-require("jairo.lazy")
+require("jrp.core")
+require("jrp.lazy")
