@@ -63,3 +63,7 @@ eval "$(starship init zsh)"
 # Initialize Zoxide (Better 'cd')
 eval "$(zoxide init zsh)"
 
+# --- Paths ---
+# Golang Path
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
