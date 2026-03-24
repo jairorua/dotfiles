@@ -26,3 +26,5 @@ window {
     border-radius: 10px;
     padding: 20;
 }
+
+@theme "/usr/share/rofi/themes/android_notification.rasi"
