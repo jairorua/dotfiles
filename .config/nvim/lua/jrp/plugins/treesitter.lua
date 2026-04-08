@@ -1,13 +1,15 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
 	branch = "master",
-	-- event = { "BufReadPre", "BufNewFile" },
 	event = { "BufReadPost", "BufNewFile" },
 	build = ":TSUpdate",
 	dependencies = {
 		"windwp/nvim-ts-autotag",
 	},
 	config = function()
+		-- Setup autotag independently of treesitter
+		require("nvim-ts-autotag").setup()
+
 		local treesitter = require("nvim-treesitter.configs")
 
 		-- Configure treesitter
@@ -18,10 +20,9 @@ return {
 			},
 			-- Enable indentation
 			indent = { enable = true },
-			-- Enable autotagging (w/ nvim-ts-autotag plugin)
-			autotag = {
-				enable = true,
-			},
+
+			-- autotag = { enable = true }, <-- REMOVE THIS LINE
+
 			-- Ensure these language parsers are installed
 			ensure_installed = {
 				"python",
