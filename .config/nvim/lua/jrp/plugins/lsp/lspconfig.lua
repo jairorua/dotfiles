@@ -22,6 +22,12 @@ return {
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 			callback = function(ev)
+				-- Disable formatting for Tailwind so it doesn't fight cssls/conform
+				local client = vim.lsp.get_client_by_id(ev.data.client_id)
+				if client and client.name == "tailwindcss" then
+					client.server_capabilities.documentFormattingProvider = false
+				end
+
 				-- Buffer local mappings.
 				-- See `:help vim.lsp.*` for documentation on any of the below functions
 				local opts = { buffer = ev.buf, silent = true }
@@ -108,6 +114,10 @@ return {
 			handlers = {
 				-- default handler for installed servers
 				function(server_name)
+					if server_name == "tailwindcss" then
+						return -- Do nothing, skip tailwind completely
+					end
+
 					lspconfig[server_name].setup({
 						capabilities = capabilities,
 					})
@@ -240,6 +250,22 @@ return {
 									propertyDeclarationTypes = { enabled = true },
 									functionLikeReturnTypes = { enabled = true },
 									enumMemberValues = { enabled = true },
+								},
+							},
+						},
+					})
+				end,
+				-- CSS
+				["cssls"] = function()
+					lspconfig.cssls.setup({
+						capabilities = capabilities,
+						settings = {
+							css = {
+								format = {
+									enable = true,
+									newlineBetweenRules = false,
+									newlineBetweenSelectors = false,
+									braceStyle = "collapse",
 								},
 							},
 						},

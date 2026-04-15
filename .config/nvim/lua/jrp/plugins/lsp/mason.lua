@@ -28,7 +28,6 @@ return {
 			ensure_installed = {
 				"html",
 				"cssls",
-				"tailwindcss",
 				"vtsls",
 				"pyright",
 				"gopls",
@@ -36,7 +35,7 @@ return {
 				"lua_ls",
 			},
 			-- Auto-install configured servers (with mason)
-			automatic_installation = true,
+			automatic_installation = false,
 		})
 
 		-- These are other tools (linters, formatters)
