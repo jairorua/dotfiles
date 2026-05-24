@@ -1,11 +1,11 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 30,
-    "spacing": 4,
+    "height": 24,
+    "spacing": 2,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center":["clock"],
-    "modules-right":["pulseaudio", "network", "battery", "tray", "custom/notification"],
+    "modules-right":["pulseaudio", "custom/network", "battery", "tray", "custom/notification", "custom/power"],
 
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -13,8 +13,25 @@
         "format": "{name}"
     },
     "clock": {
-        "format": "{:%H:%M - %b %d}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+        "interval": 60,
+        "locale": "en_US.UTF-8",
+        "format": "{:%H:%M  %d/%m/%Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "weeks-pos": "left",
+            "iso8601": true,
+            "format": {
+                "months": "<span color='#88c0d0'><b>{}</b></span>",
+                "weekdays": "<span color='#d8dee9'><b>{}</b></span>",
+                "weeks": "<span color='#81a1c1'>{:%V}</span>",
+                "today": "<span color='#2e3440' background='#88c0d0'><b>{}</b></span>"
+            }
+        }
+    },
+    "hyprland/window": {
+        "max-length": 70,
+        "separate-outputs": true
     },
     "battery": {
         "states": {
@@ -24,10 +41,11 @@
         "format": "{capacity}% {icon}",
         "format-icons":["", "", "", "", ""]
     },
-    "network": {
-        "format-wifi": "{essid} ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "format-disconnected": "Disconnected ⚠"
+    "custom/network": {
+        "exec": "/home/jrp/.config/waybar/scripts/network-status.sh",
+        "return-type": "json",
+        "interval": 10,
+        "format": "{}"
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",
@@ -42,6 +60,13 @@
         "tooltip": false,
         "format": "",
         "on-click": "swaync-client -t -sw",
+        "escape": true
+    },
+    "custom/power": {
+        "tooltip": true,
+        "tooltip-format": "Power menu",
+        "format": "⏻",
+        "on-click": "wlogout",
         "escape": true
     }
 }
