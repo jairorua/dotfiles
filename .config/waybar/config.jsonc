@@ -5,7 +5,7 @@
     "spacing": 2,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center":["clock"],
-    "modules-right":["pulseaudio", "custom/network", "battery", "tray", "custom/notification", "custom/power"],
+    "modules-right":["group/tray-drawer", "pulseaudio", "battery", "bluetooth", "custom/network", "custom/notification", "custom/power"],
 
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -41,6 +41,18 @@
         "format": "{capacity}% {icon}",
         "format-icons":["", "", "", "", ""]
     },
+    "bluetooth": {
+        "format": "󰂯",
+        "format-on": "󰂯",
+        "format-connected": "󰂱",
+        "format-disabled": "󰂲",
+        "format-off": "󰂲",
+        "format-no-controller": "",
+        "tooltip-format": "Bluetooth: {status}\nLeft click: Bluetooth settings",
+        "tooltip-format-connected": "{num_connections} connected\n\n{device_enumerate}\n\nLeft click: Bluetooth settings",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "on-click": "blueman-manager"
+    },
     "custom/network": {
         "exec": "/home/jrp/.config/waybar/scripts/network-status.sh",
         "return-type": "json",
@@ -57,6 +69,21 @@
             "default":["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "group/tray-drawer": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 250,
+            "children-class": "tray-content",
+            "click-to-reveal": true,
+            "transition-left-to-right": true
+        },
+        "modules": ["custom/tray-expand", "tray"]
+    },
+    "custom/tray-expand": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Background apps"
     },
     "tray": {
         "icon-size": 14,

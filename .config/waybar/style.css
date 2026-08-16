@@ -47,9 +47,9 @@ button:hover {
 }
 
 #workspaces button.active {
-    color: #eceff4;
-    background: #5e81ac;
-    border-bottom: 2px solid #8fbcbb;
+    color: #88c0d0;
+    background: transparent;
+    border-bottom: 2px solid #88c0d0;
     border-radius: 0;
 }
 
@@ -67,9 +67,11 @@ button:hover {
 
 #clock,
 #battery,
+#bluetooth,
 #custom-network,
 #pulseaudio,
 #tray,
+#custom-tray-expand,
 #custom-notification,
 #custom-power {
     margin: 0 2px;
@@ -84,6 +86,21 @@ button:hover {
 
 #pulseaudio {
     color: #b48ead;
+}
+
+#bluetooth {
+    color: #81a1c1;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 15px;
+}
+
+#bluetooth.connected {
+    color: #88c0d0;
+}
+
+#bluetooth.disabled,
+#bluetooth.off {
+    color: #4c566a;
 }
 
 #custom-network.online {
@@ -109,8 +126,23 @@ button:hover {
 }
 
 #tray {
-    margin: 0 4px;
+    margin: 0 3px;
     padding: 0 6px;
+}
+
+#group-tray-drawer {
+    margin-left: 3px;
+}
+
+#custom-tray-expand {
+    margin: 0 1px;
+    padding: 0 6px;
+    color: #81a1c1;
+    font-size: 14px;
+}
+
+#custom-tray-expand:hover {
+    color: #88c0d0;
 }
 
 #custom-notification {
