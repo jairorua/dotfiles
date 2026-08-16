@@ -15,7 +15,7 @@
     "clock": {
         "interval": 60,
         "locale": "en_US.UTF-8",
-        "format": "{:%H:%M  %d/%m/%Y}",
+        "format": "{:%A  %H:%M  %d/%m/%Y}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
             "mode": "month",
@@ -45,7 +45,9 @@
         "exec": "/home/jrp/.config/waybar/scripts/network-status.sh",
         "return-type": "json",
         "interval": 10,
-        "format": "{}"
+        "format": "{}",
+        "on-click": "/home/jrp/.config/waybar/scripts/wifi-menu.sh",
+        "on-click-right": "nm-connection-editor"
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",
@@ -55,6 +57,10 @@
             "default":["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "tray": {
+        "icon-size": 14,
+        "spacing": 8
     },
     "custom/notification": {
         "tooltip": false,
