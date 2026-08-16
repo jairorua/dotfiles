@@ -8,6 +8,7 @@ Thumbs.db
 # Ignore local editor files
 *.swp
 *.swo
+*.orig
 
 # ===================================================================
 # Tmux - using TPM (Tmux Plugin Manager)
