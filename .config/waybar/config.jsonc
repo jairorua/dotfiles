@@ -5,7 +5,7 @@
     "spacing": 2,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center":["clock"],
-    "modules-right":["group/tray-drawer", "pulseaudio", "battery", "bluetooth", "custom/network", "custom/notification", "custom/power"],
+    "modules-right":["tray", "pulseaudio", "battery", "bluetooth", "custom/network", "custom/notification", "custom/power"],
 
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -69,21 +69,6 @@
             "default":["", "", ""]
         },
         "on-click": "pavucontrol"
-    },
-    "group/tray-drawer": {
-        "orientation": "horizontal",
-        "drawer": {
-            "transition-duration": 250,
-            "children-class": "tray-content",
-            "click-to-reveal": true,
-            "transition-left-to-right": true
-        },
-        "modules": ["custom/tray-expand", "tray"]
-    },
-    "custom/tray-expand": {
-        "format": "",
-        "tooltip": true,
-        "tooltip-format": "Background apps"
     },
     "tray": {
         "icon-size": 14,

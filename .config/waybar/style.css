@@ -65,33 +65,38 @@ button:hover {
     background: transparent;
 }
 
-#clock,
 #battery,
 #bluetooth,
 #custom-network,
 #pulseaudio,
-#tray,
-#custom-tray-expand,
 #custom-notification,
 #custom-power {
-    margin: 0 2px;
-    padding: 0 5px;
+    margin: 0;
+    padding: 0 4px;
     color: #eceff4;
     background: transparent;
 }
 
 #clock {
+    margin: 0 2px;
+    padding: 0 5px;
     color: #e5e9f0;
+    background: transparent;
 }
 
 #pulseaudio {
     color: #b48ead;
 }
 
+#battery {
+    padding: 0 6px;
+}
+
 #bluetooth {
     color: #81a1c1;
     font-family: "JetBrainsMono Nerd Font";
     font-size: 15px;
+    padding-right: 3px;
 }
 
 #bluetooth.connected {
@@ -110,6 +115,7 @@ button:hover {
 #custom-network {
     font-family: "JetBrainsMono Nerd Font";
     font-size: 15px;
+    padding: 0 5px;
 }
 
 #custom-network.vpn {
@@ -126,23 +132,10 @@ button:hover {
 }
 
 #tray {
-    margin: 0 3px;
-    padding: 0 6px;
-}
-
-#group-tray-drawer {
-    margin-left: 3px;
-}
-
-#custom-tray-expand {
-    margin: 0 1px;
-    padding: 0 6px;
-    color: #81a1c1;
-    font-size: 14px;
-}
-
-#custom-tray-expand:hover {
-    color: #88c0d0;
+    margin: 0 4px 0 2px;
+    padding: 0 4px;
+    color: #eceff4;
+    background: transparent;
 }
 
 #custom-notification {
@@ -152,7 +145,6 @@ button:hover {
 #custom-power {
     margin-right: 6px;
     color: #bf616a;
-    padding: 0 6px;
 }
 
 #custom-power:hover {
