@@ -20,6 +20,8 @@ This setup uses the "bare repository" method to manage configurations. This mean
 - **Starship (~/.config/starship.toml):** Shell prompt configuration
 - **Zsh (~/.zshrc):** Shell configuration
 - **Thunar (~/.config/Thunar/):** File manager preferences
+- **Default applications (`~/.config/mimeapps.list`):** Thunar as the directory handler and File Roller as the ZIP archive handler
+- **File-manager D-Bus service (`~/.local/share/dbus-1/services/org.freedesktop.FileManager1.service`):** Routes standard file-manager requests to Thunar
 
 ---
 
@@ -113,7 +115,13 @@ dotfilesconfig add ~/.zshrc
 
 ```bash
 dotfilesconfig add ~/.config/Thunar/
+dotfilesconfig add ~/.config/mimeapps.list
+dotfilesconfig add ~/.local/share/dbus-1/services/org.freedesktop.FileManager1.service
 ```
+
+The default-application configuration expects `thunar`, `thunar-archive-plugin`, and `file-roller` to be installed. `mimeapps.list` controls normal directory and archive associations. The per-user D-Bus service ensures that applications using the standard `org.freedesktop.FileManager1` interface also open folders with Thunar instead of whichever system-wide file-manager service is discovered first.
+
+Both files are generic desktop configuration. They contain no credentials, private paths, or application data and are safe to keep in a public dotfiles repository.
 
 Then commit and push:
 
