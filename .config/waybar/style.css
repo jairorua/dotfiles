@@ -67,6 +67,7 @@ button:hover {
 
 #battery,
 #bluetooth,
+#custom-monitor,
 #custom-network,
 #pulseaudio,
 #custom-notification,
@@ -106,6 +107,26 @@ button:hover {
 #bluetooth.disabled,
 #bluetooth.off {
     color: #4c566a;
+}
+
+#custom-monitor {
+    color: #a3be8c;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 15px;
+    padding: 0 5px;
+}
+
+#custom-monitor.mirror {
+    color: #b48ead;
+}
+
+#custom-monitor.extend,
+#custom-monitor.extend-left {
+    color: #88c0d0;
+}
+
+#custom-monitor.laptop-only {
+    color: #ebcb8b;
 }
 
 #custom-network.online {

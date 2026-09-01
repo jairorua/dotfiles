@@ -5,7 +5,7 @@
     "spacing": 2,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center":["clock"],
-    "modules-right":["tray", "pulseaudio", "battery", "bluetooth", "custom/network", "custom/notification", "custom/power"],
+    "modules-right":["tray", "custom/monitor", "pulseaudio", "battery", "bluetooth", "custom/network", "custom/notification", "custom/power"],
 
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -60,6 +60,15 @@
         "format": "{}",
         "on-click": "/home/jrp/.config/waybar/scripts/wifi-menu.sh",
         "on-click-right": "nm-connection-editor"
+    },
+    "custom/monitor": {
+        "exec": "/home/jrp/.config/hypr/scripts/monitor_switch.sh status",
+        "return-type": "json",
+        "interval": 3,
+        "signal": 8,
+        "on-click": "/home/jrp/.config/hypr/scripts/monitor_switch.sh menu",
+        "on-click-right": "/home/jrp/.config/hypr/scripts/monitor_switch.sh external-only",
+        "escape": true
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",
