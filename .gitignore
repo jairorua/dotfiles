@@ -35,3 +35,11 @@ Thumbs.db
 # Ignore neovim session files and other local data
 /.local/state/nvim/
 /.local/share/nvim/shada/
+
+# ===================================================================
+# Credential stores
+# ===================================================================
+# Keyring and wallet databases are private runtime state.
+/.local/share/keyrings/
+/.local/share/kwalletd/
+/.config/kwalletrc

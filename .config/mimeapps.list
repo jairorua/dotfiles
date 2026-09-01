@@ -11,7 +11,7 @@ video/quicktime=vlc.desktop
 image/png=org.kde.gwenview.desktop
 inode/directory=thunar.desktop
 application/pdf=org.pwmt.zathura.desktop
-application/vnd.oasis.opendocument.text=brave-browser.desktop
+application/vnd.oasis.opendocument.text=libreoffice-writer.desktop
 application/zip=org.gnome.FileRoller.desktop
 x-scheme-handler/codex=chatgpt.desktop
 
@@ -20,5 +20,5 @@ video/mp4=brave-browser.desktop;vlc.desktop;
 image/png=org.kde.gwenview.desktop;
 video/quicktime=vlc.desktop;
 text/markdown=obsidian.desktop;
-application/vnd.oasis.opendocument.text=nvim.desktop;brave-browser.desktop;
+application/vnd.oasis.opendocument.text=libreoffice-writer.desktop;nvim.desktop;brave-browser.desktop;
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;
